@@ -1,0 +1,20 @@
+{
+    "presets": [[
+        "env",
+        {
+            "module": false
+        }
+    ], "react", "stage-1"],
+    "plugins": [
+        "lodash",
+        "transform-decorators-legacy",
+        "transform-class-properties",
+        "transform-runtime",
+        "syntax-dynamic-import"
+    ],
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true
+    }
+}
