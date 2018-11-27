@@ -4,6 +4,7 @@
   "description": "developer tool pwa",
   "main": "src/index.js",
   "scripts": {
+    "sw": "http-server output",
     "dev": "rm -rf ./dist && NODE_ENV=development webpack-dev-server --progress --colors --display-chunks --watch --config ./build/webpack.dev.js",
     "build": "rm -rf output && NODE_ENV=production webpack --progress --colors --display-chunks --config ./build/webpack.prod.js",
     "analyze": "rm -rf ./output && NODE_ENV=production webpack --config ./build/webpack.analyze.js"
@@ -40,6 +41,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.2.0",
+    "sw-precache-webpack-plugin": "^0.11.5",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "unused-files-webpack-plugin": "^3.4.0",
     "url-loader": "^1.1.2",
@@ -47,7 +49,8 @@
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.10",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.1.4",
+    "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {
     "axios": "^0.18.0",
