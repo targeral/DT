@@ -19,7 +19,7 @@ const devConfig = {
         contentBase: outputPath,
         port: 8888,
         compress: true,
-        hot: true,
+        hot: false,
         inline: false
     }
 };

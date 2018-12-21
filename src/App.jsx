@@ -1,25 +1,17 @@
 import {Component} from 'react';
+import PropTypes from 'prop-types';
+import {Route, Switch} from 'react-router-dom';
+import Desktop from './apps/desktop/index.jsx';
 
 export class App extends Component {
-    state = {
-        counts: 1
-    }
-
-    add = () => {
-        let { counts } = this.state;
-        this.setState({
-            counts: counts + 1
-        });
-    }
-
     render() {
-        let { counts } = this.state;
         return (
             <div>
-                <p>{counts}</p>
-                <button onClick={this.add}>+1s</button>
+               <Switch>
+                    <Route path="/" component={Desktop} />
+                </Switch> 
             </div>
-        );
+        )
     }
 }
 
