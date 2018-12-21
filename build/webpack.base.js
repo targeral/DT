@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const paths = require('./paths');
 const { rootPath, publicPath, isProdMode, outputPath } = require('./config');
 
 if (isProdMode) {
@@ -42,6 +43,11 @@ const baseConfig = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                include: paths.appSrc,
+                use: ['ts-loader']
             },
             {
                 test: /\.less$/,

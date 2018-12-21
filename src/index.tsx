@@ -1,8 +1,9 @@
+import * as React from 'react';
 import {render} from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
+// import {Provider} from 'react-redux';
 import App from './App';
-import {store} from './store';
+// import {store} from './store';
 import './index.less';
 
 /* eslint-disable camelcase */
@@ -18,15 +19,11 @@ import './index.less';
 //     });
 // }
 
-console.log('asdfasfds', React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED)
-
 render(
-    <Provider store={store}>
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    </Provider>,
-    document.getElementById('container')
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById('container') as HTMLElement
 );
 
 /* eslint-disable camelcase */
