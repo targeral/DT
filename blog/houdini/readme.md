@@ -1,14 +1,14 @@
 # CSS Houdini
 
-## CSS带来的便利和限制
+## CSS带来的便利和存在的限制
 
 在前端开发中，每当我使用CSS的时候，就感觉自己就像是一个“裁缝”或者说是“服装设计师”，我们使用各种布局属性来设置页面的整体就好像是服装整体的架子，使用各种字体属性、颜色属性添加图案（emmm，可以把文字理解为一种图案）就好像在衣服上缝上各种各样的图案和衣扣。有时候我们只需要改变一个属性，就可以让页面发生很大的变化。于是一些看似很复杂的页面，其实就是使用了一些简单的CSS属性实现的。正因为有CSS，我们才可以很容易制作出各种各样很精美的网页。
 
-虽然CSS为我们制作精美的页面样式带来了很多便利，但是需求总是会有一些“特殊”情况，面对设计师天马行空的想象力，我们目前掌握的CSS魔法有时候用起来总会感觉力不从心。即使神圣的“组织”通过一些新的标准来解决一些通病，然而标准出来和标准实现还是有一定差距的，在不同浏览器厂商下实现带来的兼容性副作用也是前端工程师的苦恼之一。
+虽然CSS为我们制作精美的页面样式带来了很多便利，但是需求总是会有一些“特殊”情况，面对设计师天马行空的想象力，我们目前掌握的CSS魔法有时候用起来总会感觉力不从心。即使神圣的“组织”通过一些新的标准来解决一些通病，然而标准出来的内容和标准的实现还是有一定差距的，在不同浏览器厂商下实现带来的兼容性副作用也是前端工程师的苦恼之一。
 
 暂不说兼容性问题，面对一些”奇葩“的需求，不能使用CSS实现的话，我们就只能使用JavaScript。但是使用JavaScript来实现这些“奇葩“的需求就很可能很容易带来我们经常会忽略的问题——性能。那么难道我们真的不能用CSS来实现这些”需求“或者我们在不影响性能的情况下，使用JS来实现吗？这个问题就好像之前的裁缝的例子，裁缝只能将手里的布、线或者一些已经被制作好的图案组合在一起，但是他无法去改变这块布的材料、线的粗细，图案的样式。如果裁缝也能掌握改变这些东西的能力，那么发挥的空间必然是巨大的。那么在前端领域，如果我们能自己实现这些CSS的魔法，那么我们就可以解决这些“特殊”的需求。
 
-于是“组织”打算将CSS这些魔法的一些原理（CSS引擎的某些部分）交给我们，让我们可以利用它来实现我们自己的CSS，这就是Houdini要做到事。
+于是“组织”打算将CSS这些魔法的一些底层能力（CSS引擎的某些部分）交给我们，让我们可以利用它来实现我们自己的CSS属性，这就是Houdini要做到事。
 
 ## 关于CSS Houdini
 
@@ -82,7 +82,25 @@ textarea {
 
 * 首先第一点是**Auto Repaint**，浏览器可以自己确定时间来运行这些代码然后执行这些绘制操作，我们会在之后谈一下这个话题。
 * 第二点**Auto Size**，如果我们直接使用画布，那么画布的大小我们是直接确定好的，也就说像素数也是确定好的。但是Houdini的大小是自动确定的。
-* 最后一点是**Off main thread**，虽然我们的代码会在主线程运行，但是我们有worklet的存在，所以我们可以在其他的地方。
+* 第三点是**Off main thread**，虽然我们的代码会在主线程运行，但是我们有worklet的存在，所以我们可以在其他的地方。
+* 最后一点是**No DOM overhead**
 
 
 
+
+
+## 参考链接
+
+https://juejin.im/entry/5acaa4136fb9a028c97a56a4
+https://developers.google.com/web/updates/2018/01/paintapi
+https://juejin.im/post/5adc091b51882567105f5586
+https://developers.google.com/web/updates/2016/05/houdini#css_paint_api
+https://drafts.css-houdini.org/css-paint-api/
+http://houdini.glitch.me/worklets
+https://juejin.im/entry/59f010fdf265da4315231caa
+https://zhuanlan.zhihu.com/p/30134423
+https://www.youtube.com/watch?v=lK3OiJvwgSc
+https://css-houdini.rocks/
+https://developers.google.cn/web/fundamentals/performance/rendering/
+https://developers.google.cn/web/fundamentals/performance/critical-rendering-path/analyzing-crp
+https://developers.google.com/web/updates/2018/10/animation-worklet
