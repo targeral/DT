@@ -4,6 +4,9 @@ import {Provider} from 'react-redux';
 import App from './App';
 import {store} from './store';
 import './index.less';
+import SparkMD5 from './sparkMd5.min';
+
+console.log(SparkMD5);
 
 /* eslint-disable camelcase */
 
